@@ -354,6 +354,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   /* display: inline; */
   font-size: 65px;
   line-height: inherit;
+  position: relative;
 }
 
 .animated-text-container {
@@ -361,10 +362,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 45px;
 }
 
-.txt-rotate>.wrap>.caret {
+.wrap>.caret {
   animation: blinker 0.5s cubic-bezier(0, 0.99, 0, 1.01) infinite;
   display: inline;
-  font-size: 65px;
+  position: absolute;
+  font-size: 1em;
+  line-height: inherit;
+  bottom: 0;
 }
 
 @keyframes blinker {

@@ -29,9 +29,9 @@ export default function Contact() {
         let response = await fetch("http://localhost:5000/contact", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json;charset=utf-8",
-                body: JSON.stringify(formDetails),
-            }
+                "Content-type": "application/json; charset=utf-8",
+            },
+            body: JSON.stringify(formDetails),
         });
         setButtonText("send");
         let result: responseProps = await response.json();
@@ -93,7 +93,7 @@ export default function Contact() {
                                         placeholder="Phone number"
                                         onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
-                                <Col>
+                                <Col className="px-1">
                                     <textarea
                                         value={formDetails.message}
                                         rows={6}
