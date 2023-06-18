@@ -87,6 +87,14 @@ select:focus {
     max-width: 100%;
     padding: 0 150px;
   }
+
+}
+
+@media (max-width:1000px) {
+
+  .new-email-bx button {
+    padding: 20px 35px !important;
+  }
 }
 
 p.success {
@@ -718,7 +726,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .new-email-bx::after {
   content: "";
   background: #fff;
-  border-radius: 20px;
+  border-radius: 19px;
   position: absolute;
   z-index: -1;
   top: 0;
