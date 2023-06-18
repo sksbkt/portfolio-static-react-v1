@@ -16,7 +16,7 @@ export default function NewsLetter({ onValidated, status, message }: newsLetterP
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         email &&
-            email.indexOf("@") === -1 &&
+            email.indexOf("@") > -1 &&
             onValidated({
                 Email: email,
             })
