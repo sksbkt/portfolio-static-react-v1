@@ -8,14 +8,12 @@ interface ImportMeta {
 export default function MailChimpForm() {
     const i = import.meta.env;
     const postUrl = `${i.VITE_REACT_APP_MAILCHIMP_URL}?u=${i.VITE_REACT_APP_MAILCHIMP_U}&id=${i.VITE_REACT_APP_MAILCHIMP_ID}`
-    console.log(postUrl);
 
 
     // const postUrl = `${process.env.REACT_APP_MAILCHIMP_URL}?u=${process.env.REACT_APP_MAILCHIMP_U}?id=${process.env.REACT_APP_MAILCHIMP_ID}`
 
     return (
         <>
-            <p>{postUrl}</p>
             <MailchimpSubscribe url={postUrl} render={({ subscribe, status, message }) => (
                 <NewsLetter
                     status={status}
