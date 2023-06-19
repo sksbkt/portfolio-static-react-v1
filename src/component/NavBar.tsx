@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import logo from "../assets/img/logo.svg";
+import logo from "/src/assets/img/logo_dark.png";
 import linkedin from "../assets/img/nav-icon1.svg";
 import facebook from "../assets/img/nav-icon2.svg";
 import instagram from "../assets/img/nav-icon3.svg";
@@ -37,7 +37,7 @@ export default function NavBar() {
         <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} className="logo" alt="Logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className="navbar-toggler-icon"></span>
