@@ -17,7 +17,7 @@ export default function Banner() {
     const [delta, setDelta] = useState(300 - Math.random() * 100);
 
     const period: number = 2000;
-    const toRotate = ['Web developer', 'Web designer', 'Mobile app developer', 'UX/UI designer',]
+    const toRotate = ['Ali Khoshbakht', 'a Web developer', 'a Web designer', 'a Mobile app developer', 'a UX/UI designer',]
 
     async function tick() {
         let i: number = loopNum % toRotate.length;
@@ -67,7 +67,7 @@ export default function Banner() {
                                     </span>
                                     <div className="animated-text-container">
 
-                                        <h1 className="txt-rotate">{`hi I'm a `}
+                                        <h1 className="txt-rotate">{`hi I'm `}
                                         </h1>
                                         <span className="wrap">
                                             {text}
@@ -75,7 +75,7 @@ export default function Banner() {
                                         </span>
                                     </div>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        I'm software engineer with numerous years of experience in the field. My passion for technology and programming started at a very young age, and I have since dedicated my career to developing efficient and innovative software solutions that simplify complex problems. I specialize in designing, developing, and implementing software for various industries, including healthcare, finance, and manufacturing. My expertise ranges from full-stack development, database management, to cloud computing, and I have worked on projects of various sizes and complexities. I am committed to providing top-notch quality, innovative software solutions to help clients achieve their business objectives.
                                     </p>
                                 </div>}
                         </TrackVisibility>
