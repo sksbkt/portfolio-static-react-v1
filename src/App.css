@@ -391,6 +391,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   padding: 0 0 50px 0;
   position: relative;
+  width: 100vw;
+  max-height: 725px;
 }
 
 .skill-bx {
@@ -765,4 +767,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.logo,
+.copyRightsLogo {
+  width: 10% !important;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  min-width: 50px;
+  max-width: 100px !important;
 }
