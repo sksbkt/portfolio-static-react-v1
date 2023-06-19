@@ -13,13 +13,13 @@ export default function Footer() {
                     <MailChimpForm />
                     <Col sm={6}>
                     </Col>
-                    <Col sm={6} className="text-center text-sm-end">
+                    <Col sm={6} className="text-center text-sm-end align-items-end">
                         <div className="social-icon">
                             <a href=""><img src={linkedin} alt="linkedIn" /></a>
                             <a href=""><img src={facebook} alt="facebook" /></a>
                             <a href=""><img src={instagram} alt="instagram" /></a>
                         </div>
-                        <Container className="row align-items-center">
+                        <Container className="row align-items-center mt-5 justify-content-end">
                             <Col sm={1} className="align-top">
                                 <img src={logo} alt='logo' className="copyRightsLogo d-inline-block align-top" />
                             </Col>
