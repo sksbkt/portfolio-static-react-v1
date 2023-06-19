@@ -75,7 +75,7 @@ export default function Banner() {
                                         </span>
                                     </div>
                                     <p>
-                                        I'm software engineer with numerous years of experience in the field. My passion for technology and programming started at a very young age, and I have since dedicated my career to developing efficient and innovative software solutions that simplify complex problems. I specialize in designing, developing, and implementing software for various industries, including healthcare, finance, and manufacturing. My expertise ranges from full-stack development, database management, to cloud computing, and I have worked on projects of various sizes and complexities. I am committed to providing top-notch quality, innovative software solutions to help clients achieve their business objectives.
+                                        I'm a software engineer with numerous years of experience in the field. My passion for technology and programming started at a very young age, and I have since dedicated my career to developing efficient and innovative software solutions that simplify complex problems. I specialize in designing, developing, and implementing software for various industries, including healthcare, finance, and manufacturing. My expertise ranges from full-stack development, database management, to cloud computing, and I have worked on projects of various sizes and complexities. I am committed to providing top-notch quality, innovative software solutions to help clients achieve their business objectives.
                                     </p>
                                 </div>}
                         </TrackVisibility>
