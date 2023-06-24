@@ -41,13 +41,15 @@ export default function Projects() {
         },
     ];
 
-    return <section className="project" id="project">
+    return <section className="project px-5" id="project">
         <Container>
-            <Row>
-                <Col >
+            <Row className="position-relative">
+                <Col>
                     <TrackVisibility>
                         {({ isVisible }) =>
                             <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                {/* //? we are using this technique to move scroll to a more reasonable position */}
+                                <div className="position-absolute" style={{ transform: 'translateY(-5vh)' }} id="projects"></div>
 
                                 <h2>Projects</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>

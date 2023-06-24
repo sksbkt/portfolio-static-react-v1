@@ -59,7 +59,7 @@ export default function Contact() {
                     <Col md={6}>
                         <img src={contactImg} alt="Contact us" />
                     </Col>
-                    <Col md={6}>
+                    <Col md={4} className="px-5">
                         <h2>In touch</h2>
                         <form onSubmit={handleSubmit}>
                             <Row>

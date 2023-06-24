@@ -27,11 +27,14 @@ export default function Skills() {
       items: 1
     }
   };
-  return <section className="skill" id="skills">
+  return <section className="skill" >
     <Container>
       <Row>
         <Col>
-          <div className="skill-bx">
+          <div className="skill-bx px-5 position-relative">
+            {/* //? we are using this technique to move scroll to a more reasonable position */}
+
+            <div className="position-absolute" style={{ transform: 'translateY(-20vh)' }} id="skills"></div>
             <h2>Skills</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
             <Carousel
