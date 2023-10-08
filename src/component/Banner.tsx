@@ -5,6 +5,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import headerImg from "../assets/img/header-img.svg";
 import 'animate.css'
 import TrackVisibility from 'react-on-screen'
+import { strings } from "../Utils/helper";
 
 // useEffect(() => {
 
@@ -82,8 +83,8 @@ export default function Banner() {
                     </Col>
                 </Row>
                 <Row xs={2} md={5} ml={7}>
-                    <p style={{ textAlign: 'justify' }}>
-                        I'm a software engineer with numerous years of experience in the field. My passion for technology and programming started at a very young age, and I have since dedicated my career to developing efficient and innovative software solutions that simplify complex problems. I specialize in designing, developing, and implementing software for various industries, including healthcare, finance, and manufacturing. My expertise ranges from full-stack development, database management, to cloud computing, and I have worked on projects of various sizes and complexities. I am committed to providing top-notch quality, innovative software solutions to help clients achieve their business objectives.
+                    <p style={{ textAlign: 'justify', whiteSpace: 'pre-wrap' }}>
+                        {strings.aboutMe_desc}
                     </p>
                 </Row>
                 <Row sm={3} md={3} xl={7}>

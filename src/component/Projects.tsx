@@ -1,45 +1,13 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
-import projImg1 from '../assets/img/project-img1.png';
-import projImg2 from '../assets/img/project-img2.png';
-import projImg3 from '../assets/img/project-img3.png';
+
 import ProjectCard from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css'
 import TrackVisibility from 'react-on-screen'
+import { projects, strings } from "../Utils/helper";
 export default function Projects() {
 
-    const projects = [
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
-    ];
+
 
     return <section className="project px-5" id="project">
         <Container>
@@ -52,7 +20,7 @@ export default function Projects() {
                                 <div className="position-absolute" style={{ transform: 'translateY(-5vh)' }} id="projects"></div>
 
                                 <h2>Projects</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+                                <p>{strings.projects_desc}</p>
                                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                                     <Nav variant="pills" className="flex-row nav-pills mb-5 justify-content-center align-item-center">
                                         <Nav.Item>
@@ -71,7 +39,7 @@ export default function Projects() {
                                                 {
                                                     projects.map((project, index) => {
                                                         return (
-                                                            <ProjectCard key={index} title={project.title} description={project.description} imgUrl={project.imgUrl} />
+                                                            <ProjectCard key={index} title={project.title} description={project.description} imgUrl={project.imgUrl} link={project.link} />
                                                         )
                                                     })
                                                 }

@@ -6,6 +6,7 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import { strings } from "../Utils/helper";
 
 export default function Skills() {
   const responsive = {
@@ -36,7 +37,7 @@ export default function Skills() {
 
             <div className="position-absolute" style={{ transform: 'translateY(-20vh)' }} id="skills"></div>
             <h2>Skills</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <p>{strings.skills_desc}</p>
             <Carousel
               className="skill-slider"
               autoPlay={true}
@@ -58,10 +59,10 @@ export default function Skills() {
                 <img src={meter3} alt="image" />
                 <h5>UX/UI</h5>
               </div>
-              <div className="item">
+              {/* <div className="item">
                 <img src={meter1} alt="image" />
                 <h5>Mobile app development</h5>
-              </div>
+              </div> */}
             </Carousel>
           </div>
         </Col>
