@@ -817,10 +817,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /* ? Tooltip */
-/* .item {
+.item {
   position: relative;
 }
-[date-tooltip]::before {
+/* 
+  [date-tooltip]::before {
   position: absolute;
   content: attr(date-tooltip);
   opacity: 0;

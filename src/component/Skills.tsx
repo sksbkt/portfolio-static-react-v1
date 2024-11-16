@@ -1,14 +1,11 @@
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+
 import colorSharp from "../assets/img/color-sharp.png";
 import { strings } from "../Utils/helper";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Skills() {
   const responsive = {
     superLargeDesktop: {
@@ -46,12 +43,10 @@ export default function Skills() {
               <p>{strings.skills_desc}</p>
               <Carousel
                 className="skill-slider"
-                autoPlay={false}
-                autoPlaySpeed={5000}
-                responsive={responsive}
-                pauseOnHover={true}
-                infinite={true}
-                afterChange={(s, z) => {}}
+                showArrows={true}
+                infiniteLoop={true}
+                showStatus={false}
+                showIndicators={false}
               >
                 <ProgressCircle
                   percentage={95}
@@ -65,11 +60,6 @@ export default function Skills() {
                   percentage={95}
                   title="UX/UI"
                 />
-
-                {/* <div className="item">
-                <img src={meter1} alt="image" />
-                <h5>Mobile app development</h5>
-              </div> */}
               </Carousel>
             </div>
           </Col>
