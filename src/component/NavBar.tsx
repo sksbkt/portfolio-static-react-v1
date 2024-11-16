@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import logo from "/src/assets/img/logo_dark.png";
 import linkedin from "../assets/img/nav-icon1.svg";
 import github from "../assets/img/nav-icon4.svg";
-import instagram from "../assets/img/nav-icon3.svg";
+import SocialIcon from "./SocialIcon";
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -104,25 +104,5 @@ export default function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-}
-
-interface SocialIconProps {
-  href: string;
-  title: string;
-  icon: string;
-}
-function SocialIcon({ href, title, icon }: SocialIconProps) {
-  return (
-    <a
-      href={href}
-      target={"_blank"}
-      title={title}
-    >
-      <img
-        src={icon}
-        alt=""
-      />
-    </a>
   );
 }
