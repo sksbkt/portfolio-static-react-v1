@@ -819,6 +819,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* ? Tooltip */
 .item {
   position: relative;
+  width: 60dvw;
+}
+.react-multi-carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* 
   [date-tooltip]::before {
