@@ -6,7 +6,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import MultiCarousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {  useState } from "react";
+import { HTMLProps, useState } from "react";
 const responsive = {
   desktop: {
     breakpoint: {
@@ -138,18 +138,31 @@ interface progressCircleProps {
 function ProgressCircle({ percentage, title, active }: progressCircleProps) {
   return (
     <div className="item-container">
+      <BackDropFilter
+        active={active}
+        state={{
+          active: "blur(0px)",
+          inactive: "blur(2px)",
+        }}
+      />
+      <BackDropFilter
+        active={active}
+        state={{
+          active: "saturate(100%)",
+          inactive: "saturate(40%)",
+        }}
+      />
+
       <div
         className="item"
         style={{
           scale: `${active ? 1 : 0.7}`,
-
           transition: "all 0.3s",
         }}
       >
         <CircularProgressbar
           styles={{
             root: {
-              width: "30%",
               margin: "0 auto 15px auto",
             },
             path: {
@@ -175,5 +188,28 @@ function ProgressCircle({ percentage, title, active }: progressCircleProps) {
         <h5>{title}</h5>
       </div>
     </div>
+  );
+}
+
+interface BackDropFilterProps extends HTMLProps<HTMLDivElement> {
+  active: boolean;
+  state: {
+    active: string;
+    inactive: string;
+  };
+}
+
+function BackDropFilter({ active, state }: BackDropFilterProps) {
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        backdropFilter: `${active ? state.active : state.inactive}`,
+        transition: "all .3s easeinOut",
+        zIndex: 99,
+      }}
+    />
   );
 }
