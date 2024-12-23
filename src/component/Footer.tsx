@@ -12,7 +12,7 @@ export default function Footer() {
           <Col sm={6}></Col>
           <Col
             sm={6}
-            className="text-center text-sm-end align-items-end"
+            className="text-center text-sm-end align-items-end pt-3"
           >
             <div className="social-icon">
               <SocialIcon
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             <Container className="row align-items-center mt-5 justify-content-end">
               <Col
-                sm={1}
+                sm={2}
                 className="align-top"
               >
                 <img

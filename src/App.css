@@ -540,7 +540,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .proj-imgbx {
   position: relative;
-  border-radius: 30px;
+  border-radius: 5px;
   overflow: hidden;
   margin-bottom: 24px;
   cursor: pointer;
@@ -792,28 +792,34 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 
-.tooltiptext {
-  visibility: hidden;
-  width: 120px;
+.tooltipText {
+  position: fixed;
+  width: clamp(6rem, 30dvw, 20rem);
+  height: fit-content;
   background-color: #fff;
   color: #000;
   text-align: center;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  position: absolute;
   z-index: 10000000;
   bottom: 15%;
   left: 50%;
   margin-left: -60px;
-  opacity: 0;
   transition: opacity 0.3s;
 }
-
-.tooltips:hover .tooltiptext {
+.tooltipDescription {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  font-size: 10pt;
+  font-weight: 300;
+  color: #494949;
+}
+/* .tooltips:hover .tooltipText {
   visibility: visible;
   opacity: 1;
-}
+} */
 
 /* ? Tooltip */
 .item {
