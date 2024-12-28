@@ -55,7 +55,7 @@ button {
   transition: border-color 0.25s;
 }
 
-button:hover {
+button:hover:enabled {
   border-color: #646cff;
 }
 
