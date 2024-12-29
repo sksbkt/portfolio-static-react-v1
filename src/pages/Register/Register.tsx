@@ -12,9 +12,11 @@ import {
   useState,
 } from "react";
 import "./Register.css";
+import axios from "../../api/axios";
+import { AxiosError } from "axios";
+import { REGISTER_URL } from "../../constants/urls";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "/register";
 const Register = () => {
   const userRef = useRef<null | HTMLInputElement>(null);
   const errRef = useRef<HTMLParagraphElement | null>(null);
@@ -68,6 +70,30 @@ const Register = () => {
     if (!v1 || !v2) {
       setErrMsg("Wrong entry");
       return;
+    }
+    try {
+      const response = await axios.post(
+        REGISTER_URL,
+        JSON.stringify({ username: user, password: pwd, role: "user" }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(response.data);
+      console.log(JSON.stringify(response));
+      setSuccess(true);
+    } catch (error: any) {
+      const errMsg = error.response.data.message;
+      if (error.response?.status === 409) {
+        setErrMsg("Username already exists");
+      } else if (errMsg) {
+        console.error(`ERROR: ${errMsg}`);
+        setErrMsg(errMsg);
+      } else {
+        setErrMsg("Error");
+      }
+      errRef.current?.focus();
     }
   };
   return (

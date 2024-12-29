@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import { BACKEND_URL } from "../constants/urls";
 export default function Contact() {
-  const backendURL = import.meta.env.VITE_BACKEND_URL;
   const formInitialDetails = {
     firstName: "",
     lastName: "",
@@ -29,7 +29,7 @@ export default function Contact() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setButtonText("sending...");
-    let response = await fetch(`${backendURL}/contact`, {
+    let response = await fetch(`${BACKEND_URL}/api/contact/email`, {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=utf-8",
