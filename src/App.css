@@ -1,3 +1,7 @@
+/************ tailwind ***************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /************ Custom Font ************/
 @font-face {
   font-family: Centra;
@@ -26,7 +30,7 @@
 }
 
 html {
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
@@ -921,5 +925,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100dvh;
+}
+.fullPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
   height: 100dvh;
 }

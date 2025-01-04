@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useState } from "react";
 interface AuthContextType {
-  auth: {};
+  auth: any;
   setAuth: React.Dispatch<React.SetStateAction<{}>>;
 }
 const AuthContext = createContext<AuthContextType>({
