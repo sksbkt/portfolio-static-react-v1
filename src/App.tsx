@@ -8,6 +8,7 @@ import * as Sentry from "@sentry/react";
 import NotFound from "./pages/NotFound/NotFound";
 import RequireAuth from "./component/RequireAuth";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Admin from "./pages/Admin/Admin";
 function App() {
   // return (
   //   <button
@@ -64,5 +65,9 @@ const PROTECTED_ROUTES_LIST = [
   {
     path: "dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "admin",
+    element: <Admin />,
   },
 ];
