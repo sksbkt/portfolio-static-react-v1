@@ -40,12 +40,18 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(JSON.stringify(response.data));
-      const decodedToken: { roles: string } = jwtDecode(response.data.token);
-      const roles = decodedToken.roles;
-      console.log(roles, decodedToken);
+      const data = response.data;
+      console.log(JSON.stringify(data));
+      const decodedToken: { roles: string } = jwtDecode(data.accessToken);
+      const { roles } = decodedToken;
+      const accessToken = data.accessToken;
 
-      setAuth({ user, pwd, roles });
+      setAuth({
+        user,
+        // pwd,
+        roles,
+        accessToken,
+      });
       navigate(from, { replace: true });
     } catch (error: any) {
       if (!error.response) {
