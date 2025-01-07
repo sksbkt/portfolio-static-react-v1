@@ -36,7 +36,6 @@ const UseAxiosPrivate = () => {
       async (error) => {
         const prevRequest = error?.config;
 
-        console.log("we are refreshing", error);
         // ? If the response status is 401 and the request hasn't been retried yet
         if (error?.response?.status === 401 && !prevRequest?.sent) {
           prevRequest.sent = true;

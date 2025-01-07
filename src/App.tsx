@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import RequireAuth from "./component/RequireAuth";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Admin from "./pages/Admin/Admin";
+import PersistLogin from "./component/PersistLogin";
 function App() {
   // return (
   //   <button
@@ -32,16 +33,20 @@ function App() {
             key={index}
           />
         ))}
-        <Route
-          element={<RequireAuth allowedRoles={["admin", "manager", "user"]} />}
-        >
-          {PROTECTED_ROUTES_LIST.map((route, index) => (
-            <Route
-              path={route.path}
-              element={route.element}
-              key={index}
-            />
-          ))}
+        <Route element={<PersistLogin />}>
+          <Route
+            element={
+              <RequireAuth allowedRoles={["admin", "manager", "user"]} />
+            }
+          >
+            {PROTECTED_ROUTES_LIST.map((route, index) => (
+              <Route
+                path={route.path}
+                element={route.element}
+                key={index}
+              />
+            ))}
+          </Route>
         </Route>
       </Route>
     </Routes>
@@ -60,12 +65,12 @@ const UNPROTECTED_ROUTES_LIST = [
     path: "*",
     element: <NotFound />, // 404 Not Found page
   },
-];
-const PROTECTED_ROUTES_LIST = [
   {
     path: "dashboard",
     element: <Dashboard />,
   },
+];
+const PROTECTED_ROUTES_LIST = [
   {
     path: "admin",
     element: <Admin />,
