@@ -17,6 +17,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "jwt-decode": "^4.0.0",
     "nodemon": "^3.1.9",
@@ -31,6 +32,7 @@
     "react-on-screen": "^2.1.1",
     "react-router-dom": "^7.1.1",
     "react-scripts": "^5.0.1",
+    "tailwind-merge": "^2.6.0",
     "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {

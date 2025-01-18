@@ -4,9 +4,11 @@ import { LOGIN_URL } from "../../constants/urls";
 import { jwtDecode } from "jwt-decode";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./Login.css";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Login = () => {
-  const { setAuth } = useAuth();
+  const { setAuth, persist, setPersist } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,7 +17,8 @@ const Login = () => {
   const userRef = useRef<HTMLInputElement | null>(null);
   const errRef = useRef<HTMLParagraphElement | null>(null);
 
-  const [user, setUser] = useState("");
+  const [user, setUser] = useLocalStorage("user", "");
+  // useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -62,6 +65,15 @@ const Login = () => {
       errRef.current?.focus();
     }
   };
+
+  const togglePersist = () => {
+    setPersist(!persist);
+  };
+  useEffect(() => {
+    localStorage.setItem("persist", persist.toString());
+    return () => {};
+  }, [persist]);
+
   return (
     <>
       <section>
@@ -98,6 +110,19 @@ const Login = () => {
                 required
               />
               <button>Sign In</button>
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="persist"
+                  className="!p-0 !m-0 !w-5 !h-5 border-1 aspect-[1] text-white rounded-full bg-transparent"
+                  onChange={() => {
+                    togglePersist();
+                    console.log(persist);
+                  }}
+                  checked={persist}
+                />
+                <label htmlFor="persist">Trust this device</label>
+              </div>
             </form>
             <p>
               Need an Account?
