@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Banner from "../../component/Banner";
 import Contact from "../../component/Contact";
 import Footer from "../../component/Footer";
@@ -11,12 +10,12 @@ const Home = () => {
     <>
       <NavBar />
       <Banner />
-      <Link
+      {/* <Link
         to="/admin"
         className="z-40"
       >
         ADMIN
-      </Link>
+      </Link> */}
       <Skills />
       <Projects />
       <Contact />
