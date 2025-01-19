@@ -1,0 +1,20 @@
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "✓"; /* or '\2713', or '\2714' */
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  line-height: 1;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
