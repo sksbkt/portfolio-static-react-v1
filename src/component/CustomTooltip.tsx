@@ -17,10 +17,10 @@ const Tooltip: React.FC<TooltipProps> = ({
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      console.log(
-        tooltipRef.current?.clientWidth,
-        tooltipRef.current?.clientHeight
-      );
+      // console.log(
+      //   tooltipRef.current?.clientWidth,
+      //   tooltipRef.current?.clientHeight
+      // );
 
       const tooltipSafeX = 350;
       const tooltipSafeY = 100;
@@ -33,7 +33,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 
       let x = e.clientX + offsetX;
       let y = e.clientY + offsetY;
-      console.log(x + tooltipSafeX, windowWidth);
+      // console.log(x + tooltipSafeX, windowWidth);
       if (x + tooltipSafeX > windowWidth) {
         x = windowWidth - tooltipSafeX - offsetX;
       }

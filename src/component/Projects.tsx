@@ -51,7 +51,7 @@ export default function Projects() {
                     <Tab.Content>
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {projects.map((project, index) => {
+                          {projects.slice(0, 6).map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -65,7 +65,17 @@ export default function Projects() {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <p>second tab</p>
+                        {projects.slice(6, 12).map((project, index) => {
+                          return (
+                            <ProjectCard
+                              key={index}
+                              title={project.title}
+                              description={project.description}
+                              imgUrl={project.imgUrl}
+                              link={project.link}
+                            />
+                          );
+                        })}
                       </Tab.Pane>
                       <Tab.Pane eventKey="third"></Tab.Pane>
                     </Tab.Content>

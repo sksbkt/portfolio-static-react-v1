@@ -5,9 +5,22 @@ import quantic_swrtodo from "../assets/img/projects-img/quantic_swrtodo.png";
 import quantic_figpro from "../assets/img/projects-img/figma_clone.png";
 import promptopia_quantic from "../assets/img/projects-img/promptopia_quantic.png";
 import quantic_dashboard from "../assets/img/projects-img/quantic_dashboard.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import quantic_game from "../assets/img/projects-img/quantic_game.png";
+import quantic_phone from "../assets/img/projects-img/quantic_phone.png";
+
 export const projects = [
+  {
+    title: "Quantic game",
+    description: "A front page for a gaming website",
+    imgUrl: quantic_game,
+    link: "https://quanticgame.netlify.app/",
+  },
+  {
+    title: "Quantic phone",
+    description: "An e-commerce front page influenced by apple.com",
+    imgUrl: quantic_phone,
+    link: "https://quantic-phone.netlify.app/",
+  },
   {
     title: "Quantic shop",
     description: "an e-commerce website",
