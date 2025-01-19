@@ -11,12 +11,12 @@ const Home = () => {
     <>
       <NavBar />
       <Banner />
-      <Link
+      {/* <Link
         to="/admin"
         className="z-40"
       >
         ADMIN
-      </Link>
+      </Link> */}
       <Skills />
       <Projects />
       <Contact />
