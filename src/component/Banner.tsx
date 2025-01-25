@@ -6,10 +6,6 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { strings } from "../Utils/helper";
 
-// useEffect(() => {
-
-// }, []);
-
 export default function Banner() {
   const [loopNum, setLoopNum] = useState<number>(0);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);

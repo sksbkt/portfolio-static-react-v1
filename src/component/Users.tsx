@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UseAxiosPrivate from "../hooks/useAxiosPrivate";
+import { Table } from "react-bootstrap";
 // import useRefreshToken from "../hooks/useRefreshToken";
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -16,8 +17,12 @@ const Users = () => {
         const data = response.data;
         console.log(data);
         isMounted && setUsers(data);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        if (error.name === "CanceledError") {
+          console.log("Request canceled:", error.message);
+        } else {
+          console.error(error);
+        }
       }
     };
     getUsers();
@@ -29,15 +34,33 @@ const Users = () => {
   return (
     <article>
       <h2>Users List</h2>
-      {users.length ? (
-        <ul>
-          {users.map((user: any, index: number) => (
-            <li key={index}>{user?.username}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>No users to display</p>
-      )}
+      <Table
+        striped
+        bordered
+        hover
+        style={{ backgroundColor: "red" }}
+      >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.length ? (
+            users.map((user: any, index: number) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{user?.username}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={2}>No users to display</td>
+            </tr>
+          )}
+        </tbody>
+      </Table>
       {/* <button onClick={() => refresh()}>Refresh</button>
       <br /> */}
     </article>
