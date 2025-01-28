@@ -15,8 +15,10 @@ const Users = () => {
           signal: controller.signal,
         });
         const data = response.data;
-        console.log(data);
-        isMounted && setUsers(data);
+        const userNames = data.map((user: any) => user.username);
+        // console.log(data);
+        // isMounted && setUsers(data);
+        isMounted && setUsers(userNames);
       } catch (error: any) {
         if (error.name === "CanceledError") {
           console.log("Request canceled:", error.message);
@@ -38,7 +40,6 @@ const Users = () => {
         striped
         bordered
         hover
-        style={{ backgroundColor: "red" }}
       >
         <thead>
           <tr>
@@ -51,7 +52,7 @@ const Users = () => {
             users.map((user: any, index: number) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{user?.username}</td>
+                <td>{user}</td>
               </tr>
             ))
           ) : (

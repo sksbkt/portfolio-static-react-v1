@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { AuthProvider } from "./context/AuthProvider";
 import {
   BrowserRouter,
-  createRoutesFromChildren,
-  matchRoutes,
+  // createRoutesFromChildren,
+  // matchRoutes,
   Route,
   Routes,
-  useLocation,
-  useNavigationType,
+  // useLocation,
+  // useNavigationType,
 } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as Sentry from "@sentry/react";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 // Sentry.init({
 //   dsn: "https://8b79a5552ff2d9118229116d78542159@o4508324821008384.ingest.de.sentry.io/4508583823278160",
@@ -38,6 +39,9 @@ import * as Sentry from "@sentry/react";
 //   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 // });
 
+if (import.meta.env.PROD) {
+  disableReactDevTools();
+}
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>

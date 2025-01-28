@@ -26,12 +26,12 @@ function PersistLogin() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(`isLoading ${isLoading}`);
-    console.log(`authToken ${JSON.stringify(auth?.accessToken)}`);
+  // useEffect(() => {
+  //   console.log(`isLoading ${isLoading}`);
+  //   console.log(`authToken ${JSON.stringify(auth?.accessToken)}`);
 
-    return () => {};
-  }, [isLoading]);
+  //   return () => {};
+  // }, [isLoading]);
 
   return (
     <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>

@@ -1,15 +1,23 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { jwtDecode } from "jwt-decode";
 
 interface RequiredAuthProps {
   allowedRoles: string[];
 }
+interface DecodedToken {
+  roles: [string];
+}
 const RequireAuth = ({ allowedRoles }: RequiredAuthProps) => {
   const { auth } = useAuth();
-  // console.log(auth);
+  const decoded = auth?.accessToken
+    ? jwtDecode<DecodedToken>(auth.accessToken)
+    : undefined;
+  const roles = decoded?.roles || [];
+  console.log(auth);
 
   const location = useLocation();
-  return auth?.roles?.find((role: string) => allowedRoles.includes(role)) ? (
+  return roles?.find((role: string) => allowedRoles.includes(role)) ? (
     <Outlet />
   ) : auth?.user ? (
     <Navigate

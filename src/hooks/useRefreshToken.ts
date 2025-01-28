@@ -8,10 +8,9 @@ function useRefreshToken() {
     });
     const newAccessToken = response.data.accessToken;
     setAuth((prev: any) => {
-      console.log({ PREV: prev.accessToken, NEW: newAccessToken });
       return {
         ...prev,
-        roles: response.data.roles,
+        // roles: response.data.roles,
         accessToken: newAccessToken,
       };
     });

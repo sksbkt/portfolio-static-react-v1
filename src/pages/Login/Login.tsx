@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "../../api/axios";
 import { LOGIN_URL } from "../../constants/urls";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -50,15 +50,15 @@ const Login = () => {
         }
       );
       const data = response.data;
-      console.log(JSON.stringify(data));
-      const decodedToken: { roles: string } = jwtDecode(data.accessToken);
-      const { roles } = decodedToken;
+      // console.log(JSON.stringify(data));
+      // const decodedToken: { roles: string } = jwtDecode(data.accessToken);
+      // const { roles } = decodedToken;
       const accessToken = data.accessToken;
 
       setAuth({
         user,
         // pwd,
-        roles,
+        // roles,
         accessToken,
       });
       resetUser();
