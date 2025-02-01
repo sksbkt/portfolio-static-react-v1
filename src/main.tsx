@@ -12,9 +12,9 @@ import {
   // useLocation,
   // useNavigationType,
 } from "react-router-dom";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import * as Sentry from "@sentry/react";
+import "./App.css";
+// import * as Sentry from "@sentry/react";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 // Sentry.init({
